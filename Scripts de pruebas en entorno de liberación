@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "Ejecutando pruebas de liberación..."
+
+npm test
+
+if [ $? -eq 0 ]; then
+  echo "Pruebas exitosas"
+else
+  echo "Pruebas fallidas"
+  exit 1
+fi
