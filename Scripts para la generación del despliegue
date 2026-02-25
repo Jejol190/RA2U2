@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "Iniciando despliegue..."
+
+docker stop artesaniaweb || true
+docker rm artesaniaweb || true
+
+docker run -d \
+  -p 3000:3000 \
+  --name artesaniaweb \
+  artesaniaweb
+
+echo "Despliegue completado"
